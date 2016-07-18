@@ -1,0 +1,10 @@
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" ng-class="{'active': $state.current.name.includes('item-search')}"><a href ui-sref="app.home.item-search">Item&nbsp;Search</a></li>
+    <li role="presentation" ng-class="{'active': $state.current.name.includes('item-look-up')}"><a href ui-sref="app.home.item-look-up">Item&nbsp;Look-Up</a></li>
+  </ul>
+
+</div>
+<div ui-view></div>

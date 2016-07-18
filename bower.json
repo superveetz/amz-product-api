@@ -1,0 +1,25 @@
+{
+  "name": "testing-api",
+  "description": "",
+  "main": "server/server.js",
+  "authors": [
+    "Superveetz <alexdiv87@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.7",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "ui-router#^0.3.1",
+    "font-awesome": "^4.6.3",
+    "underscore": "^1.8.3",
+    "async": "^2.0.0"
+  }
+}

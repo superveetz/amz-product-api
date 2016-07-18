@@ -1,0 +1,222 @@
+<div id="item-search">
+    <div class="row">
+
+        <div id="options-col" class="col-xs-4 col-sm-3">
+
+            <h2 class="page-title">Item Search</h2>
+
+            <form id="optionsForm" name="optionsForm" class="form-horiontal" ng-submit="submit()" novalidate>
+
+                <!-- Search Index -->
+                <div class="form-group">
+                    <label class="text-center options-label col-lg-3" for="keywords">Search&nbsp;Index</label>
+                    <div class="col-lg-9 input-group">
+                        <select class="form-control" ng-model="options.searchIndex" name="searchIndex" id="searchIndex"  ng-change="setSelectedMarket()" required>
+                            <option ng-repeat="option in caLocale track by $index" value="{{option.searchIndex}}">{{option.department}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Sort -->
+                <div class="form-group">
+                    <label class="text-center options-label col-lg-3" for="keywords">SortBy</label>
+                    <div class="col-lg-9 input-group">
+                        <select class="form-control" ng-model="options.sort" name="sort" id="sort">
+                            <option ng-repeat="option in selectedMarket.sortValues track by $index" value="{{option}}">{{option}}</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="hidden-xs hidden-sm hidden-md text-center options-label col-lg-3" for="keywords">Response&nbsp;Group</label>
+                    <div class="col-lg-9 input-group">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="responseGroup" 
+                            placeholder="ResponseGroup (comma seperated list of words)"
+                            ng-model="options.responseGroup">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="hidden-xs hidden-sm hidden-md text-center options-label col-lg-3" for="keywords">Keywords</label>
+                    <div class="col-lg-9 input-group">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="keywords" 
+                            placeholder="Keywords (any number of words in a product listing title)"
+                            ng-model="options.keywords">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="hidden-xs hidden-sm hidden-md text-center options-label col-lg-3" for="title">Title</label>
+                    <div class="col-lg-9 input-group">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="title" 
+                            placeholder="Title (any words in a product listing title)"
+                            ng-model="options.title">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="hidden-xs hidden-sm hidden-md text-center options-label col-lg-3" for="brand">Brand</label>
+                    <div class="col-lg-9 input-group">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="brand" 
+                            placeholder="Brand (ex. Chanel)"
+                            ng-model="options.brand">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="hidden-xs hidden-sm hidden-md text-center options-label col-lg-3" for="manufacturer">Manufacturer</label>
+                    <div class="col-lg-9 input-group">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="manufacturer" 
+                            placeholder="Manufacturer (ex. Toyota)"
+                            ng-model="options.manufacturer">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="hidden-xs hidden-sm hidden-md text-center options-label col-lg-3" for="maximumPrice">+Price</label>
+                    <div class="col-lg-9 input-group">
+                        <div class="hidden-xs hidden-sm hidden-md input-group-addon">$</div>
+                        <input 
+                            type="number" 
+                            class="form-control" 
+                            id="maximumPrice" 
+                            placeholder="Max Price"
+                            ng-model="options.maximumPrice"
+                            min="0"
+                            step="1"
+                            required>
+                        <div class="input-group-addon">.00</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="hidden-xs hidden-sm hidden-md text-center options-label col-lg-3" for="minimumPrice">-Price</label>
+                    <div class="col-lg-9 input-group">
+                        <div class="hidden-xs hidden-sm hidden-md input-group-addon">$</div>
+                        <input 
+                            type="number" 
+                            class="form-control" 
+                            id="minimumPrice" 
+                            placeholder="Min Price"
+                            ng-model="options.minimumPrice"
+                            min="0"
+                            step="1">
+                        <div class="input-group-addon">.00</div>
+                    </div>
+                </div>
+
+                <button class="btn btn-block btn-success btn-lg" type="submit" ng-disabled="submitting">
+                    <span ng-if="submitting"><i class="fa fa-spinner fa-spin"></i> Searching</span>
+                    <span ng-if="!submitting">
+                        <span class="hidden-xs hidden-sm">Search Products</span>
+                        <span class="hidden-lg hidden-md">Search</span>
+                    </span>
+                </button>
+
+            </form>
+
+        </div>
+
+        <section id="results" class="col-xs-8 col-sm-9">
+
+            <div class="alert alert-danger row" ng-if="error.show">
+
+                <button type="button" ng-click="error.show = false" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <h4><strong><i class="fa fa-exclamation"></i> &nbsp;{{ error.message }}</strong></h4>
+
+                <div class="row" ng-if="error.list && error.list.length">
+
+                    <div class="error-list" ng-repeat="i in newArray(6) track by $index">
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                            <ul>
+                                <li ng-repeat="errMsg in error.list | limitTo: (error.list.length / 6 + 1) :  (error.list.length / 6 + 1) * $index">
+                                    <h4><span class="label label-default">{{errMsg.split("'")[1].split("'")[0]}}</span></h4>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+
+                    
+
+                </div>
+            </div>
+
+            <div class="table-responsive" ng-if="currentProducts && currentProducts.length">
+                <table class="table-bordered">
+                    <thead>
+                        <th>ASIN</th>
+                        <th ng-if="currentProducts[0].ListPrice[0] || currentProducts[0].Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0]">
+                            <a href ng-click="setSelectedFilter('ListPrice')">List&nbsp;Price</a>
+                        </th>
+                        <th ng-if="currentProducts[0].SalesRank[0]">
+                            <a href ng-click="setSelectedFilter('SalesRank')">Sales&nbsp;Rank</a>
+                        </th>
+                        <th ng-if="currentProducts[0].OfferSummary[0]">Offer&nbsp;Summary</th>
+                        <th ng-if="currentProducts[0].Offers[0]">Offers</th>
+                        <th ng-if="currentProducts[0].ItemAttributes[0]">Item&nbsp;Attributes</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in currentProducts | orderBy: selectedFilter.filterFunc : selectedFilter.reverse">
+                            
+                            <td>{{ product.ASIN[0] }}</td>
+
+                            <td ng-if="currentProducts[0].ItemAttributes[0].ListPrice[0]">{{ product.ItemAttributes[0].ListPrice[0].FormattedPrice[0] }}</td>
+                            <td ng-if="currentProducts[0].ListPrice[0] || currentProducts[0].Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0]">
+                                {{ product.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0] }}
+                            </td>
+
+                            <td ng-if="currentProducts[0].SalesRank[0]">{{product.SalesRank[0]}}</td>
+
+                            <td ng-if="currentProducts[0].OfferSummary[0]">
+                                <ul>
+                                    <li ng-repeat="(key, value) in product.OfferSummary[0]">
+                                        <p class="lead"><strong>{{key}}</strong>: {{ value[0] }}</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            
+                            <td ng-if="currentProducts[0].Offers[0]">
+                                <ul>
+                                    <li ng-repeat="(key, value) in product.Offers[0]">
+                                        <p class="lead"><strong>{{key}}</strong>: {{ value[0] }}</p>
+                                    </li>
+                                </ul>
+                            </td>
+
+                            <td ng-if="currentProducts[0].ItemAttributes[0]">
+                                <ul>
+                                    <li ng-repeat="(key, value) in product.ItemAttributes[0]">
+                                        <p class="lead"><strong>{{key}}</strong>: {{ value[0] }}</p>
+                                    </li>
+                                </ul>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </div>
+</div>

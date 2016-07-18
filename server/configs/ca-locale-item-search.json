@@ -1,0 +1,755 @@
+[
+    {
+        "department": "All Departments",
+        "searchIndex": "All",
+        "rootBrowseNode": null,
+        "sortValues": [
+            "None"
+        ],
+        "itemSearchParams": [
+            "Availability",
+            "ItemPage",
+            "Keywords",
+            "MaximumPrice",
+            "MerchantId",
+            "MinimumPrice"
+        ]
+    },
+    {
+        "department": "Apps & Games",
+        "searchIndex": "MobileApps",
+        "rootBrowseNode": "6386372011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "ItemPage",
+            "Keywords",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Publisher",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Automotive",
+        "searchIndex": "Automotive",
+        "rootBrowseNode": "6948389011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Baby",
+        "searchIndex": "Baby",
+        "rootBrowseNode": "3561347011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Beauty",
+        "searchIndex": "Beauty",
+        "rootBrowseNode": "6205125011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Books",
+        "searchIndex": "Books",
+        "rootBrowseNode": "927726",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "ItemPage",
+            "Keywords",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Power",
+            "Publisher",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Clothing & Accessories",
+        "searchIndex": "Apparel",
+        "rootBrowseNode": "8604904011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Electronics",
+        "searchIndex": "Electronics",
+        "rootBrowseNode": "677211011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Gift Cards",
+        "searchIndex": "GiftCards",
+        "rootBrowseNode": "9230167011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "ItemPage",
+            "Keywords",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Publisher",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Grocery & Gourmet Food",
+        "searchIndex": "Grocery",
+        "rootBrowseNode": "6967216011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Health & Personal Care",
+        "searchIndex": "HealthPersonalCare",
+        "rootBrowseNode": "6205178011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Home & Kitchen",
+        "searchIndex": "Kitchen",
+        "rootBrowseNode": "2206276011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Jewelry",
+        "searchIndex": "Jewelry",
+        "rootBrowseNode": "9674384011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Kindle Store",
+        "searchIndex": "KindleStore",
+        "rootBrowseNode": "2972706011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "ItemPage",
+            "Keywords",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Publisher",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Luggage & Bags",
+        "searchIndex": "Luggage",
+        "rootBrowseNode": "6205506011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Movies & TV",
+        "searchIndex": "DVD",
+        "rootBrowseNode": "14113311",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "titlerank"
+        ],
+        "itemSearchParams": [
+            "Actor",
+            "AudienceRating",
+            "Availability",
+            "Director",
+            "ItemPage",
+            "Keywords",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Publisher",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Music",
+        "searchIndex": "Music",
+        "rootBrowseNode": "962454",
+        "sortValues": [
+            "None",
+            "-orig-rel-date",
+            "-releasedate",
+            "orig-rel-date",
+            "releasedate",
+            "salesrank",
+            "titlerank"
+        ],
+        "itemSearchParams": [
+            "Artist",
+            "Availability",
+            "ItemPage",
+            "Keywords",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Musical Instruments, Stage & Studio",
+        "searchIndex": "MusicalInstruments",
+        "rootBrowseNode": "6916845011",
+        "sortValues": [
+            "None",
+            "-price",
+            "date-desc-rank",
+            "price",
+            "relevancerank",
+            "reviewrank_authority",
+            "salesrank"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Office Products",
+        "searchIndex": "OfficeProducts",
+        "rootBrowseNode": "6205512011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Patio, Lawn & Garden",
+        "searchIndex": "LawnAndGarden",
+        "rootBrowseNode": "6299024011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Pet Supplies",
+        "searchIndex": "PetSupplies",
+        "rootBrowseNode": "6291628011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Shoes & Handbags",
+        "searchIndex": "Shoes",
+        "rootBrowseNode": "8604916011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Software",
+        "searchIndex": "Software",
+        "rootBrowseNode": "3234171",
+        "sortValues": [
+            "None",
+            "-daterank",
+            "inverse-pricerank",
+            "pricerank",
+            "salesrank",
+            "titlerank"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Sports & Outdoors",
+        "searchIndex": "SportingGoods",
+        "rootBrowseNode": "2242990011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Tools & Home Improvement",
+        "searchIndex": "Tools",
+        "rootBrowseNode": "3006903011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Toys & Games",
+        "searchIndex": "Toys",
+        "rootBrowseNode": "6205517011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Availability",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Video Games",
+        "searchIndex": "VideoGames",
+        "rootBrowseNode": "110218011",
+        "sortValues": [
+            "None",
+            "-titlerank",
+            "inverse-pricerank",
+            "pricerank",
+            "salesrank",
+            "titlerank"
+        ],
+        "itemSearchParams": [
+            "Author",
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "Manufacturer",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    },
+    {
+        "department": "Watches",
+        "searchIndex": "Watches",
+        "rootBrowseNode": "2235621011",
+        "sortValues": [
+            "None",
+            "salesrank",
+            "-launch-date",
+            "sale-flag",
+            "pmrank",
+            "price",
+            "-price"
+        ],
+        "itemSearchParams": [
+            "Availability",
+            "Brand",
+            "ItemPage",
+            "Keywords",
+            "MaximumPrice",
+            "MerchantId",
+            "MinPercentageOff",
+            "MinimumPrice",
+            "Sort",
+            "Title"
+        ]
+    }
+]

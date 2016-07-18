@@ -1,0 +1,13 @@
+.options-label {
+    line-height: 35px;
+}
+.alert ul {
+    margin: 0;
+    padding: 0;
+}
+
+.label.label-default {
+    background-color: #eee;
+    color: black;
+    letter-spacing: 1px;
+}
