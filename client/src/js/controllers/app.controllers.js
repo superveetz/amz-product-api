@@ -8,11 +8,22 @@
     .controller('HomeCtrl', ['$scope', 'caLocaleInfo', function ($scope, caLocaleInfo) {
         console.log('caLocaleInfo', caLocaleInfo);
         $scope.caLocale = caLocaleInfo;
+        $scope.currentProducts = [];
 
         var initMarket = angular.copy($scope.caLocale[4]);
         initOptions(initMarket);
         $scope.selectedMarket = initMarket;
         console.log(initMarket);
+
+        $scope.setSelectedMarket = function () {
+            $scope.caLocale.forEach(function (market, marketIndex) {
+                if (market.searchIndex === $scope.options.searchIndex) {
+                    $scope.selectedMarket = market;
+                    initOptions(market);
+                    return;
+                }
+            });
+        };
 
         function initOptions (market) {
             $scope.options = {
@@ -25,25 +36,14 @@
     .controller('ItemSearchCtrl', ['$scope', '$http', function ($scope, $http) {
 
         $scope.selectedFilter = null;
-        $scope.currentProducts = new Array();
         $scope.error = {};
-
-        $scope.setSelectedMarket = function () {
-            $scope.caLocale.forEach(function (market, marketIndex) {
-                if (market.searchIndex === $scope.options.searchIndex) {
-                    $scope.selectedMarket = market;
-                    initOptions(market);
-                    return;
-                }
-            });
-        };
 
         $scope.filters = {
             SalesRank: {
                 reverse: false,
                 filterFunc: function (product) {
-                    if (product.SalesRank && product.SalesRank.length) {
-                        return parseInt(product.SalesRank[0]);
+                    if (product.salesRank) {
+                        return parseInt(product.salesRank);
                     } else {
                         return undefined;
                     }
@@ -52,11 +52,8 @@
             ListPrice: {
                 reverse: false,
                 filterFunc: function (product) {
-                    if(product.Offers &&
-                    product.Offers[0].Offer &&
-                    product.Offers[0].Offer[0].OfferListing && 
-                    product.Offers[0].Offer[0].OfferListing[0].Price[0]) {
-                        return parseInt(product.Offers[0].Offer[0].OfferListing[0].Price[0].Amount[0]);
+                    if (product.price) {
+                        return parseInt(product.price.ammount);
                     } else {
                         return undefined;
                     }
@@ -99,8 +96,11 @@
                         headers: { 'Content-Type': 'application/json' }
                     }).then(function (res) {
                         console.log('res: ', res);
+
                         $scope.currentProducts = [];
-                        $scope.currentProducts = $scope.currentProducts.concat(res.data.products);
+                        var tmpProducts = parseResponse(res);
+                        $scope.currentProducts = $scope.currentProducts.concat(tmpProducts);
+
                         seriesCB(null, parseInt(res.data.totalPages));
                     }, function (err) {
                         seriesCB(err);
@@ -121,7 +121,10 @@
                                 headers: { 'Content-Type': 'application/json' }
                             }).then(function (res) {
                                 console.log('res: ', res);
-                                $scope.currentProducts = $scope.currentProducts.concat(res.data.products);
+
+                                var tmpProducts = parseResponse(res);
+                                $scope.currentProducts = $scope.currentProducts.concat(tmpProducts);
+
                                 next();
                             }, function (err) {
                                 next(err);
@@ -158,5 +161,42 @@
                 }
             });
         };
+
+        function parseResponse(res) {
+            if (res.data && res.data.products && res.data.products.length) {
+
+                var tmpProducts = [];
+
+                res.data.products.forEach(function (item, i) {
+                    var newItem = {};
+
+                    newItem.images = {
+                        smallImg: item.hasOwnProperty('SmallImage') ? item.SmallImage[0].URL[0] : undefined
+                    };
+
+                    newItem.title = {
+                        text: item.hasOwnProperty('ItemAttributes') ? item.ItemAttributes[0].Title[0] : undefined,
+                        url: item.hasOwnProperty('DetailPageURL') ? item.DetailPageURL[0] : undefined
+                    };
+
+                    newItem.price = {
+                        ammount: item.hasOwnProperty('Offers') ? item.Offers[0].Offer[0].OfferListing[0].Price[0].Amount[0] : undefined,
+                        formatted: item.hasOwnProperty('Offers') ? item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0] : undefined
+                    };
+
+                    newItem.salesRank = item.hasOwnProperty('SalesRank') ? item.SalesRank[0] : undefined;
+
+                    newItem.newInStock = item.hasOwnProperty('OfferSummary') ? item.OfferSummary[0].TotalNew[0] : undefined;
+
+                    newItem.totalOffers = item.hasOwnProperty('Offers') ? item.Offers[0].TotalOffers[0] : undefined;
+
+                    newItem.asin = item.hasOwnProperty('ASIN') ? item.ASIN[0] : undefined;
+                    
+                    tmpProducts.push(newItem);
+                });
+
+                return tmpProducts;
+            }
+        }
     }]);
 })();

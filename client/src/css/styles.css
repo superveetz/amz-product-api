@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+.alert.alert-danger {
+    padding-left: 25px;
+}
+
 .label.label-default {
     background-color: #eee;
     color: black;

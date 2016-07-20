@@ -23,8 +23,8 @@ var allItems = [];
 
 // amazon
 var client = amazon.createClient({
-  awsId: "AKIAIV3RK4Y2DG3UYBLQ",
-  awsSecret: "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",
+  awsId: "AKIAJFDDIIZPNIUYCZEA",
+  awsSecret: "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",
   awsTag: "aldivi-20"
 });
 
@@ -104,6 +104,8 @@ app.post('/api/item-search', function (req, res) {
         products: [],
         totalPages: ''
     };
+
+    search.responseGroup = "Large, Offers";
 
     client.itemSearch(search, function(err, results, response) {
         // console.log(results);  // products 

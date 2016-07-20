@@ -9,7 +9,7 @@
 
                 <!-- Search Index -->
                 <div class="form-group">
-                    <label class="text-center options-label col-lg-3" for="keywords">Search&nbsp;Index</label>
+                    <label class="text-center options-label col-lg-3" for="keywords">Department</label>
                     <div class="col-lg-9 input-group">
                         <select class="form-control" ng-model="options.searchIndex" name="searchIndex" id="searchIndex"  ng-change="setSelectedMarket()" required>
                             <option ng-repeat="option in caLocale track by $index" value="{{option.searchIndex}}">{{option.department}}</option>
@@ -24,18 +24,6 @@
                         <select class="form-control" ng-model="options.sort" name="sort" id="sort">
                             <option ng-repeat="option in selectedMarket.sortValues track by $index" value="{{option}}">{{option}}</option>
                         </select>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="hidden-xs hidden-sm hidden-md text-center options-label col-lg-3" for="keywords">Response&nbsp;Group</label>
-                    <div class="col-lg-9 input-group">
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            id="responseGroup" 
-                            placeholder="ResponseGroup (comma seperated list of words)"
-                            ng-model="options.responseGroup">
                     </div>
                 </div>
 
@@ -152,64 +140,53 @@
                                 </li>
                             </ul>
                         </div>
-
-
                     </div>
 
-                    
-
                 </div>
+
             </div>
 
             <div class="table-responsive" ng-if="currentProducts && currentProducts.length">
-                <table class="table-bordered">
+                <table class="table table-striped table-bordered">
                     <thead>
-                        <th>ASIN</th>
-                        <th ng-if="currentProducts[0].ListPrice[0] || currentProducts[0].Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0]">
-                            <a href ng-click="setSelectedFilter('ListPrice')">List&nbsp;Price</a>
-                        </th>
-                        <th ng-if="currentProducts[0].SalesRank[0]">
-                            <a href ng-click="setSelectedFilter('SalesRank')">Sales&nbsp;Rank</a>
-                        </th>
-                        <th ng-if="currentProducts[0].OfferSummary[0]">Offer&nbsp;Summary</th>
-                        <th ng-if="currentProducts[0].Offers[0]">Offers</th>
-                        <th ng-if="currentProducts[0].ItemAttributes[0]">Item&nbsp;Attributes</th>
+                        <tr>
+                            <th>Image</th>
+                            
+                            <th>Title</th>
+
+                            <th>
+                                <a href ng-click="setSelectedFilter('ListPrice')">Price</a>
+                            </th>
+
+                            <th>
+                                <a href ng-click="setSelectedFilter('SalesRank')">S.&nbsp;Rank</a>
+                            </th>
+
+                            <th>Stock</th>
+                            <th>O</th>
+                            <th>ASIN</th>
+                        </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <tr ng-repeat="product in currentProducts | orderBy: selectedFilter.filterFunc : selectedFilter.reverse">
+
+                            <td>
+                                <img style="height: 100%; width: 100%;" class="thumbnail" ng-src="{{product.images.smallImg}}">
+                            </td>
+
+                            <td class="text-left">
+                                <a ng-href="{{ product.title.url }}" target="_blank">{{ product.title.text }}</a>
+                            </td>
+
+                            <td>{{ product.price.formatted }}</td>
+
+                            <td>{{ product.salesRank }}</td>
+
+                            <td>{{ product.newInStock }}</td>
+
+                            <td>{{ product.totalOffers }}</td>
                             
-                            <td>{{ product.ASIN[0] }}</td>
-
-                            <td ng-if="currentProducts[0].ItemAttributes[0].ListPrice[0]">{{ product.ItemAttributes[0].ListPrice[0].FormattedPrice[0] }}</td>
-                            <td ng-if="currentProducts[0].ListPrice[0] || currentProducts[0].Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0]">
-                                {{ product.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0] }}
-                            </td>
-
-                            <td ng-if="currentProducts[0].SalesRank[0]">{{product.SalesRank[0]}}</td>
-
-                            <td ng-if="currentProducts[0].OfferSummary[0]">
-                                <ul>
-                                    <li ng-repeat="(key, value) in product.OfferSummary[0]">
-                                        <p class="lead"><strong>{{key}}</strong>: {{ value[0] }}</p>
-                                    </li>
-                                </ul>
-                            </td>
-                            
-                            <td ng-if="currentProducts[0].Offers[0]">
-                                <ul>
-                                    <li ng-repeat="(key, value) in product.Offers[0]">
-                                        <p class="lead"><strong>{{key}}</strong>: {{ value[0] }}</p>
-                                    </li>
-                                </ul>
-                            </td>
-
-                            <td ng-if="currentProducts[0].ItemAttributes[0]">
-                                <ul>
-                                    <li ng-repeat="(key, value) in product.ItemAttributes[0]">
-                                        <p class="lead"><strong>{{key}}</strong>: {{ value[0] }}</p>
-                                    </li>
-                                </ul>
-                            </td>
+                            <td>{{ product.asin }}</td>
 
                         </tr>
                     </tbody>
