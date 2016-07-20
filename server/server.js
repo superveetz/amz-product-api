@@ -23,8 +23,8 @@ var allItems = [];
 
 // amazon
 var client = amazon.createClient({
-  awsId: "AKIAJFDDIIZPNIUYCZEA",
-  awsSecret: "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",
+  awsId: "AKIAI7XT7CXG7P7Y5K7A",
+  awsSecret: "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",
   awsTag: "aldivi-20"
 });
 
